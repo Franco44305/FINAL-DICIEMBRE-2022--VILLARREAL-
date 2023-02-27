@@ -37,6 +37,8 @@ namespace Logica
             return true;
 
         }
+
+        //CORRECCIÓN: MUCHO CÓDIGO DUPLICADO, NO ESTÁ REALIZADA BIEN LA SOBREESCRITURA, CONCEPTUALMENTE NO PARECE ESTAR ENTENDIDO
         public bool CargarActualizarCliente(int Numero, string Nombre,
             string NickName, string Contraseña, List<int> CodsIngredientesFavs)
         {
@@ -63,6 +65,8 @@ namespace Logica
             };
             return true;
         }
+
+        //CORRECCIÓN: NO ESTA RESUELTO POR SOBREESCRITURA
         public bool AgregarReceta(int numero, int RecetaFavs, string Nickname, string contraseña)
         {
             bool resultado = ValidarUsuario(Nickname, contraseña);
@@ -86,6 +90,8 @@ namespace Logica
             }
             return false;
         }
+
+        //CORRECCIÓN: NO ESTA RESUELTO POR SOBREESCRITURA
         public bool AgregarUsuarioFavorito(int Numero, string nickname, string Nickname, string contraseña)
         {
             bool resultado = ValidarUsuario(Nickname, contraseña);
@@ -112,6 +118,7 @@ namespace Logica
                 
                 foreach (var rec in recetas)
                 {
+                    //CORRECCIÓN: NO FUNCIONA, SI LA RECETA TIENE 5 PALABRAS Y BUSCAMOS POR 1, DEBERIA ESTAR EN EL RESULTADO PERO DE ESTA FORMA NO LO HARÁ.
                     if (rec.Nombre == palabra)
                     {
                         ListadoFiltrado.Add(rec.Nombre);

@@ -14,7 +14,7 @@ namespace Logica.Models
         public DateTime FechaEliminacion { get; set; }
         public string Autor { get; set; }
 
-
+//CORRECCIÓN: EN INGREDIENTES DEBERIAMOS TENER UN MÉTODO QUE SEPA DEVOLVER CADA UNO SU DESCRIPCIÓN CUSTOM, Y LUEGO USARLO AQUÍ.
         public virtual string RetornarMensaje()
         {
             Recetas receta = new Recetas();
